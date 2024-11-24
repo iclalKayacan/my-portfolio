@@ -16,22 +16,34 @@ const Blog = () => {
   ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+      {/* Header */}
       <Header />
-      <main className="flex-grow p-4">
-        <h1 className="text-2xl font-bold">Blog</h1>
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+
+      {/* Main Content */}
+      <main className="flex-grow flex flex-col items-center p-4">
+        <h1 className="text-4xl font-extrabold text-center mt-40">
+          Welcome to <span className="text-blue-500">My Blog</span>
+        </h1>
+        <p className="text-lg text-gray-400 mt-4 text-center max-w-2xl">
+          Burada React, Tailwind CSS ve diğer web geliştirme konularındaki
+          yolculuğumu paylaşacağım yazıları bulabilirsiniz.
+        </p>
+
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
           {posts.map((post) => (
             <div
               key={post.id}
-              className="p-4 border border-gray-200 rounded shadow hover:shadow-lg"
+              className="p-6 bg-gray-800 border border-gray-700 rounded-lg shadow hover:shadow-lg transition hover:bg-gray-700"
             >
-              <h2 className="text-xl font-bold">{post.title}</h2>
-              <p className="text-gray-600">{post.summary}</p>
+              <h2 className="text-2xl font-bold text-blue-500">{post.title}</h2>
+              <p className="text-gray-400 mt-2">{post.summary}</p>
             </div>
           ))}
         </div>
       </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );

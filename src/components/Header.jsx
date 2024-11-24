@@ -12,7 +12,7 @@ const Header = () => (
 
       {/* Navigation Links */}
       <div className="flex items-center space-x-8 text-lg font-medium text-white">
-        <Link className="hover:text-blue-500 transition" to="/work">
+        <Link className="hover:text-blue-500 transition" to="/mywork">
           My Work
         </Link>
         <Link className="hover:text-blue-500 transition" to="/about">
