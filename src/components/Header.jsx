@@ -1,51 +1,51 @@
 import { Link } from "react-scroll";
 
 const Header = () => (
-  <header className="w-full py-10 bg-cover bg-center relative bg-transparent">
-    <nav className="absolute top-0 w-full flex justify-between px-16 py-5 z-10">
-      <div className="text-white text-4xl font-extrabold flex items-center">
-        <span>alison.</span>
+  <header className="w-full">
+    <nav className="absolute top-0 w-full flex justify-between px-32 py-5 z-10">
+      <div className="text-white text-3xl font-extrabold flex items-center">
+        <span>İCLAL.</span>
       </div>
-      <div className="flex space-x-8 text-white text-lg font-semibold items-center">
+      <div className="flex space-x-8 text-white text-sm font-semibold items-center">
         <Link
           to="home"
           smooth={true}
           duration={500}
-          className="hover:text-blue-500 cursor-pointer text-xl"
+          className="hover:text-gray-500 cursor-pointer text-sm"
         >
-          Home
+          HOME
         </Link>
         <Link
           to="about"
           smooth={true}
           duration={500}
-          className="hover:text-blue-500 cursor-pointer text-xl"
+          className="hover:text-gray-500 cursor-pointer text-sm"
         >
-          About
+          ABOUT
         </Link>
         <Link
           to="services"
           smooth={true}
           duration={500}
-          className="hover:text-blue-500 cursor-pointer text-xl"
+          className="hover:text-gray-500 cursor-pointer text-sm"
         >
-          Services
+          SERVICES
         </Link>
         <Link
           to="works"
           smooth={true}
           duration={500}
-          className="hover:text-blue-500 cursor-pointer text-xl"
+          className="hover:text-gray-500 cursor-pointer text-sm"
         >
-          Works
+          WORKS
         </Link>
         <Link
           to="contact"
           smooth={true}
           duration={500}
-          className="hover:text-blue-500 cursor-pointer text-xl"
+          className="hover:text-gray-500 cursor-pointer text-sm"
         >
-          Contact
+          CONTACT
         </Link>
       </div>
     </nav>

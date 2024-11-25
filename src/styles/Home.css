@@ -1,0 +1,56 @@
+/* Apply the fonts to your body and headings */
+body {
+  font-family: "Poppins", sans-serif; /* Default font */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Alata", sans-serif; /* Use Alata for headings and paragraphs */
+}
+
+/* Specific classes (if you want to target them) */
+.rotating-text span {
+  font-family: "Alata", sans-serif;
+  font-weight: 600; /* Optionally apply a bold style */
+}
+
+.social-icons i {
+  font-family: "Poppins", sans-serif; /* Apply Poppins to the icons */
+}
+#home {
+  background-image: url("../../public/assets/bg.jpg"); /* Adjust the path to the location of your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: none;
+}
+
+.text-md {
+  font-size: 1.25rem;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-gray-400 {
+  color: #d1d5db;
+}
+
+/* Header component */
+header {
+  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+  position: fixed; /* Fix the header at the top */
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Ensure it appears above other elements */
+}

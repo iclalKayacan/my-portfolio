@@ -1,138 +1,116 @@
+import React, { useState, useEffect } from "react";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaPinterest,
+  FaBehance,
+} from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import About from "../components/About";
+import Services from "../components/Services";
+import Works from "../components/Works";
+import Contact from "../components/Contact";
+import "../styles/Home.css"; // Ensure CSS is correctly imported
 
-const Home = () => (
-  <div className="min-h-screen flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-    {/* Header */}
-    <Header />
+const Home = () => {
+  const [isVisible, setIsVisible] = useState(false);
 
-    {/* Main Content */}
-    <main
-      id="home"
-      className="flex-grow flex flex-col items-center justify-center text-center py-40 px-4 bg-gray-900"
-    >
-      <h1 className="text-6xl md:text-8xl font-extrabold mb-8">
-        Welcome to <span className="text-blue-500">My Portfolio</span>
-      </h1>
-      <p className="text-lg md:text-2xl text-gray-400 mt-4 max-w-4xl mx-auto">
-        Frontend Developer | Blogger | Software Enthusiast. Passionate about
-        creating beautiful, user-friendly web experiences. Take a look at my
-        work below.
-      </p>
-      <button className="mt-8 bg-blue-500 text-gray-900 px-8 py-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-600 transition">
-        Check My Work
-      </button>
-    </main>
+  const toggleVisibility = () => {
+    if (window.scrollY > 300) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
+    }
+  };
 
-    {/* About Section */}
-    <section id="about" className="py-40 bg-gray-800 text-white text-center">
-      <h2 className="text-5xl md:text-6xl font-bold mb-6">About Me</h2>
-      <p className="text-lg md:text-xl max-w-3xl mx-auto">
-        I am a frontend developer who loves creating user-friendly and engaging
-        websites. With experience in React, Next.js, and other modern web
-        technologies, I am always looking to improve and take on new challenges.
-        Let's create something amazing together!
-      </p>
-      <p className="text-lg md:text-xl max-w-3xl mx-auto mt-6">
-        From static websites to dynamic web applications, I am passionate about
-        bringing ideas to life with clean, maintainable code.
-      </p>
-    </section>
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-    {/* Services Section */}
-    <section id="services" className="py-40 bg-gray-900 text-white text-center">
-      <h2 className="text-5xl md:text-6xl font-bold mb-8">Services</h2>
-      <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-10">
-        I offer a wide range of web development services. Whether you're looking
-        for a new website, a redesign, or a custom web application, I can help
-        bring your vision to life.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        <div className="bg-gray-800 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            Frontend Development
-          </h3>
-          <p className="text-gray-400 text-lg md:text-xl">
-            I build responsive, interactive, and user-friendly websites using
-            modern technologies like React, Next.js, and Tailwind CSS.
-          </p>
+  const rotatingTexts = ["DESIGNING", "DEVELOPING", "CREATIVITY"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisibility);
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
+    }, 2000); // Change every 2 seconds
+    return () => {
+      window.removeEventListener("scroll", toggleVisibility);
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className="home min-h-screen flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+      {/* Header */}
+      <Header />
+
+      {/* Main Section with Rotating Text */}
+      <section
+        id="home" // Ensure the section has the correct ID for CSS targeting
+        className="flex-grow flex flex-col items-center justify-center text-center py-40 px-4"
+      >
+        <h2 className="text-md text-gray-400 mb-4 uppercase">
+          Software Developer & Web Designer
+        </h2>
+        <h1 className="text-7xl font-bold text-white">
+          <div className="rotating-text">
+            <span>{rotatingTexts[currentIndex]}</span>
+          </div>
+        </h1>
+        <p className="text-gray-400 mt-4 text-lg mt-5">
+          I'm a Creative Designer and I make things work. <br />
+          Turning your dreams into reality.
+        </p>
+
+        {/* Social Media Icons using React Icons */}
+        <div className="social-icons mt-8 flex justify-center space-x-6">
+          <a href="#" className="text-white hover:text-gray-500">
+            <FaFacebookF size={20} /> {/* Facebook Icon */}
+          </a>
+          <a href="#" className="text-white hover:text-gray-500">
+            <FaTwitter size={20} /> {/* Twitter Icon */}
+          </a>
+          <a href="#" className="text-white hover:text-gray-500">
+            <FaInstagram size={20} /> {/* Instagram Icon */}
+          </a>
+          <a href="#" className="text-white hover:text-gray-500">
+            <FaPinterest size={20} /> {/* Pinterest Icon */}
+          </a>
+          <a href="#" className="text-white hover:text-gray-500">
+            <FaBehance size={20} /> {/* Behance Icon */}
+          </a>
         </div>
-        <div className="bg-gray-800 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            UI/UX Design
-          </h3>
-          <p className="text-gray-400 text-lg md:text-xl">
-            I create beautiful and intuitive user interfaces that ensure your
-            users have a smooth and engaging experience on all devices.
-          </p>
-        </div>
-        <div className="bg-gray-800 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            Web Applications
-          </h3>
-          <p className="text-gray-400 text-lg md:text-xl">
-            I build powerful and scalable web applications that provide rich
-            functionality and dynamic user experiences using modern frameworks
-            and tools.
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Works Section */}
-    <section id="works" className="py-40 bg-gray-800 text-white text-center">
-      <h2 className="text-5xl md:text-6xl font-bold mb-8">My Work</h2>
-      <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-12">
-        Check out some of the projects I’ve worked on. Each project showcases my
-        skills in creating effective, well-designed web applications that meet
-        user needs.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-        <div className="bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            Project One
-          </h3>
-          <p className="text-gray-400 text-lg">
-            A responsive website built using React and Tailwind CSS, focusing on
-            clean design and mobile optimization.
-          </p>
-        </div>
-        <div className="bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            Project Two
-          </h3>
-          <p className="text-gray-400 text-lg">
-            A full-stack web application built with Next.js and Node.js,
-            providing real-time data analytics for users.
-          </p>
-        </div>
-        <div className="bg-gray-700 p-12 rounded-lg shadow-lg hover:shadow-xl">
-          <h3 className="text-xl md:text-2xl font-semibold text-blue-500 mb-4">
-            Project Three
-          </h3>
-          <p className="text-gray-400 text-lg">
-            A personal blog created with React and GraphQL, featuring a clean
-            design and content management functionality.
-          </p>
-        </div>
-      </div>
-    </section>
+      {/* Additional Content */}
+      <main>
+        <About />
+        <Services />
+        <Works />
+        <Contact />
+      </main>
 
-    {/* Contact Section */}
-    <section id="contact" className="py-40 bg-gray-900 text-white text-center">
-      <h2 className="text-5xl md:text-6xl font-bold mb-8">Contact</h2>
-      <p className="text-lg md:text-2xl max-w-4xl mx-auto mb-10">
-        Feel free to reach out for collaborations, project inquiries, or just to
-        say hello! I’m always open to new opportunities.
-      </p>
-      <button className="bg-blue-500 text-gray-900 px-8 py-4 rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-600 transition">
-        Get in Touch
-      </button>
-    </section>
+      {/* Footer */}
+      <Footer />
 
-    {/* Footer */}
-    <Footer />
-  </div>
-);
+      {/* Scroll to Top Button */}
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 bg-white text-gray-900 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition"
+        >
+          ↑
+        </button>
+      )}
+    </div>
+  );
+};
 
 export default Home;
