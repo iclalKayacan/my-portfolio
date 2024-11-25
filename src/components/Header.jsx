@@ -1,32 +1,51 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Header = () => (
-  <header className=" fixed w-full z-50 shadow-sm">
-    <nav className="container mx-auto flex justify-between items-center py-4 px-6">
-      {/* Logo ve Marka İsmi */}
-      <div className="flex items-center space-x-4">
-        <h1 className="text-2xl font-bold text-white">
-          <Link to="/">İclal's Page</Link>
-        </h1>
+  <header className="w-full py-10 bg-cover bg-center relative bg-transparent">
+    <nav className="absolute top-0 w-full flex justify-between px-16 py-5 z-10">
+      <div className="text-white text-4xl font-extrabold flex items-center">
+        <span>alison.</span>
       </div>
-
-      {/* Navigation Links */}
-      <div className="flex items-center space-x-8 text-lg font-medium text-white">
-        <Link className="hover:text-blue-500 transition" to="/mywork">
-          My Work
-        </Link>
-        <Link className="hover:text-blue-500 transition" to="/about">
-          About
-        </Link>
-        <Link className="hover:text-blue-500 transition" to="/blog">
-          Blog
+      <div className="flex space-x-8 text-white text-lg font-semibold items-center">
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-500 cursor-pointer text-xl"
+        >
+          Home
         </Link>
         <Link
-          className="hover:text-blue-500 flex items-center transition"
-          to="/newsletter"
+          to="about"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-500 cursor-pointer text-xl"
         >
-          <span>Newsletter</span>
-          <span className="ml-2">📬</span>
+          About
+        </Link>
+        <Link
+          to="services"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-500 cursor-pointer text-xl"
+        >
+          Services
+        </Link>
+        <Link
+          to="works"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-500 cursor-pointer text-xl"
+        >
+          Works
+        </Link>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={500}
+          className="hover:text-blue-500 cursor-pointer text-xl"
+        >
+          Contact
         </Link>
       </div>
     </nav>
