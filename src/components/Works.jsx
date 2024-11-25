@@ -7,8 +7,8 @@ const Works = () => (
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start">
       {/* Left Section: Text */}
       <div className="lg:w-1/3 text-left mb-10 lg:mb-0 lg:pr-12">
-        <h2 className="text-3xl font-extrabold text-black mb-6">My Works</h2>
-        <p className="text-lg font-light text-black leading-relaxed">
+        <h2 className="text-3xl font-extrabold text-white mb-6">MY WORKS</h2>
+        <p className="text-lg font-light text-white leading-relaxed">
           Explore the projects I’ve worked on, showcasing my expertise in web
           development and design.
         </p>
