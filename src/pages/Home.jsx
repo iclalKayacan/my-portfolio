@@ -3,8 +3,8 @@ import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaPinterest,
-  FaBehance,
+  FaGithub,
+  FaLinkedin,
 } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -80,11 +80,21 @@ const Home = () => {
           <a href="#" className="text-white hover:text-gray-500">
             <FaInstagram size={20} /> {/* Instagram Icon */}
           </a>
-          <a href="#" className="text-white hover:text-gray-500">
-            <FaPinterest size={20} /> {/* Pinterest Icon */}
+          <a
+            href="https://github.com/yourusername"
+            className="text-white hover:text-gray-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={20} /> 
           </a>
-          <a href="#" className="text-white hover:text-gray-500">
-            <FaBehance size={20} /> {/* Behance Icon */}
+          <a
+            href="https://www.linkedin.com/in/yourusername"
+            className="text-white hover:text-gray-500"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={20} /> 
           </a>
         </div>
       </section>
@@ -92,7 +102,6 @@ const Home = () => {
       {/* Additional Content */}
       <main>
         <About />
-        <Services />
         <Works />
         <Contact />
       </main>
