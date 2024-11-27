@@ -11,8 +11,9 @@ import Footer from "../components/Footer";
 import About from "../components/About";
 import Services from "../components/Services";
 import Works from "../components/Works";
+import Blog from "../components/Blog"; // Blog bileşeni import edildi
 import Contact from "../components/Contact";
-import "../styles/Home.css"; // Ensure CSS is correctly imported
+import "../styles/Home.css"; // CSS dosyasının doğru import edildiğinden emin olun
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,7 +40,7 @@ const Home = () => {
     window.addEventListener("scroll", toggleVisibility);
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
-    }, 2000); // Change every 2 seconds
+    }, 2000); // Her 2 saniyede bir değişim
     return () => {
       window.removeEventListener("scroll", toggleVisibility);
       clearInterval(interval);
@@ -53,7 +54,7 @@ const Home = () => {
 
       {/* Main Section with Rotating Text */}
       <section
-        id="home" // Ensure the section has the correct ID for CSS targeting
+        id="home"
         className="flex-grow flex flex-col items-center justify-center text-center py-40 px-4"
       >
         <h2 className="text-md text-gray-400 mb-4 uppercase">
@@ -69,16 +70,16 @@ const Home = () => {
           Turning your dreams into reality.
         </p>
 
-        {/* Social Media Icons using React Icons */}
+        {/* Social Media Icons */}
         <div className="social-icons mt-8 flex justify-center space-x-6">
           <a href="#" className="text-white hover:text-gray-500">
-            <FaFacebookF size={20} /> {/* Facebook Icon */}
+            <FaFacebookF size={20} />
           </a>
           <a href="#" className="text-white hover:text-gray-500">
-            <FaTwitter size={20} /> {/* Twitter Icon */}
+            <FaTwitter size={20} />
           </a>
           <a href="#" className="text-white hover:text-gray-500">
-            <FaInstagram size={20} /> {/* Instagram Icon */}
+            <FaInstagram size={20} />
           </a>
           <a
             href="https://github.com/yourusername"
@@ -99,10 +100,12 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Additional Content */}
+      {/* Main Content */}
       <main>
         <About />
         <Works />
+        {/* Blog kısmı burada ekleniyor */}
+        <Blog />
         <Contact />
       </main>
 

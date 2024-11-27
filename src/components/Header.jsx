@@ -2,30 +2,24 @@ import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
 
 const Header = () => {
-  // State to track the scroll position
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State for mobile menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Effect to handle scroll event
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true); // Change header background when scrolled more than 50px
+        setScrolled(true);
       } else {
-        setScrolled(false); // Keep header transparent when at the top
+        setScrolled(false);
       }
     };
 
-    // Attach the scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Close menu when clicking outside
   const handleOverlayClick = () => {
     if (menuOpen) setMenuOpen(false);
   };
@@ -37,18 +31,16 @@ const Header = () => {
           scrolled ? "bg-[#111111]" : "bg-transparent"
         }`}
       >
-        {/* Logo Section */}
         <div className="text-white text-3xl font-extrabold flex items-center">
           <span>İCLAL.</span>
         </div>
 
-        {/* Desktop Menu */}
         <div className="hidden lg:flex space-x-8 text-white text-sm font-semibold items-center">
           <Link
             to="home"
             smooth={true}
             duration={500}
-            className="hover:text-gray-500 cursor-pointer text-sm"
+            className="hover:text-gray-500 cursor-pointer"
           >
             HOME
           </Link>
@@ -56,7 +48,7 @@ const Header = () => {
             to="about"
             smooth={true}
             duration={500}
-            className="hover:text-gray-500 cursor-pointer text-sm"
+            className="hover:text-gray-500 cursor-pointer"
           >
             ABOUT
           </Link>
@@ -64,21 +56,28 @@ const Header = () => {
             to="works"
             smooth={true}
             duration={500}
-            className="hover:text-gray-500 cursor-pointer text-sm"
+            className="hover:text-gray-500 cursor-pointer"
           >
             WORKS
+          </Link>
+          <Link
+            to="blog"
+            smooth={true}
+            duration={500}
+            className="hover:text-gray-500 cursor-pointer"
+          >
+            BLOG
           </Link>
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            className="hover:text-gray-500 cursor-pointer text-sm"
+            className="hover:text-gray-500 cursor-pointer"
           >
             CONTACT
           </Link>
         </div>
 
-        {/* Mobile Hamburger Menu */}
         <div className="lg:hidden flex items-center ml-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -88,7 +87,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Overlay (for closing menu by clicking outside) */}
         {menuOpen && (
           <div
             className="fixed inset-0 bg-black bg-opacity-50 z-20"
@@ -96,7 +94,6 @@ const Header = () => {
           ></div>
         )}
 
-        {/* Mobile Menu Overlay */}
         <div
           className={`fixed top-0 right-0 h-full w-64 bg-black text-white flex flex-col items-start px-6 py-10 transform transition-transform z-30 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
@@ -128,6 +125,15 @@ const Header = () => {
             onClick={() => setMenuOpen(false)}
           >
             WORKS
+          </Link>
+          <Link
+            to="blog"
+            smooth={true}
+            duration={500}
+            className="hover:text-gray-500 cursor-pointer text-lg mb-6"
+            onClick={() => setMenuOpen(false)}
+          >
+            BLOG
           </Link>
           <Link
             to="contact"

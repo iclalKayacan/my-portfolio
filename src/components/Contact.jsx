@@ -1,7 +1,5 @@
-
-
 const Contact = () => (
-  <section id="contact" className="py-20 bg-black text-white">
+  <section id="contact" className="py-24 bg-black text-white">
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start justify-between px-6">
       <div className="lg:w-1/2 w-full mb-10 lg:mb-0">
         <h2 className="text-3xl md:text-5xl font-bold mb-6">
