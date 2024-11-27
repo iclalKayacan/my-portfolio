@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const blogPosts = [
@@ -37,7 +38,7 @@ const Blog = () => {
         {blogPosts.map((post) => (
           <div
             key={post.id}
-            className="bg-gray-600  rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
+            className="bg-gray-600 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition"
           >
             <img
               src={post.image}
@@ -47,14 +48,12 @@ const Blog = () => {
             <div className="p-6">
               <h3 className="text-2xl font-semibold mb-4">{post.title}</h3>
               <p className="text-gray-400 mb-6">{post.description}</p>
-              <a
-                href={post.link}
+              <Link
+                to={`/blog/${post.id}`}
                 className="text-black hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Read More →
-              </a>
+              </Link>
             </div>
           </div>
         ))}
