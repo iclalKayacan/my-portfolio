@@ -1,7 +1,7 @@
 const Works = () => (
   <section
     id="works"
-    className="py-60 bg-cover bg-center text-white px-10"
+    className="py-20 lg:py-48 bg-cover bg-center text-white px-10"
     style={{ backgroundImage: "url('/assets/desk.jpg')" }}
   >
     <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-start">

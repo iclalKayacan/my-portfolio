@@ -47,7 +47,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home min-h-screen flex flex-col bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+    <div className="home min-h-screen flex flex-col bg-black text-white">
       {/* Header */}
       <Header />
 
@@ -86,7 +86,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub size={20} /> 
+            <FaGithub size={20} />
           </a>
           <a
             href="https://www.linkedin.com/in/yourusername"
@@ -94,7 +94,7 @@ const Home = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin size={20} /> 
+            <FaLinkedin size={20} />
           </a>
         </div>
       </section>

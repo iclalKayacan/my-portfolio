@@ -1,6 +1,5 @@
-/* Apply the fonts to your body and headings */
 body {
-  font-family: "Poppins", sans-serif; /* Default font */
+  font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -10,20 +9,19 @@ h4,
 h5,
 h6,
 p {
-  font-family: "Alata", sans-serif; /* Use Alata for headings and paragraphs */
+  font-family: "Alata", sans-serif;
 }
 
-/* Specific classes (if you want to target them) */
 .rotating-text span {
   font-family: "Alata", sans-serif;
-  font-weight: 600; /* Optionally apply a bold style */
+  font-weight: 600;
 }
 
 .social-icons i {
-  font-family: "Poppins", sans-serif; /* Apply Poppins to the icons */
+  font-family: "Poppins", sans-serif;
 }
 #home {
-  background-image: url("../../public/assets/bg.jpg"); /* Adjust the path to the location of your image */
+  background-image: url("../../public/assets/bg.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,10 +45,48 @@ p {
   color: #d1d5db;
 }
 
-/* Header component */
 header {
-  background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-  position: fixed; /* Fix the header at the top */
-  width: 100%; /* Make it span the full width */
-  z-index: 1000; /* Ensure it appears above other elements */
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .home h1 {
+    font-size: 2.5rem;
+  }
+
+  .home h2 {
+    font-size: 1rem;
+  }
+
+  .home p {
+    font-size: 0.875rem;
+  }
+
+  .social-icons {
+    margin-top: 4rem;
+    gap: 1rem; /* Yatay boşluk eklemek için gap özelliği kullanıldı */
+    display: flex; /* Gap çalışması için flex container gerektiğinden eklenmeli */
+    justify-content: center;
+  }
+
+  .social-icons a {
+    transform: scale(0.8);
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  button {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  .flex {
+    gap: 0.5rem;
+  }
 }

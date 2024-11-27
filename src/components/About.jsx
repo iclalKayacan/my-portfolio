@@ -34,7 +34,7 @@ const About = () => (
       </div>
 
       {/* Image Section */}
-      <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center">
+      <div className="lg:w-1/2 mt-10 lg:mt-0 flex justify-center hidden lg:flex">
         <img
           src="/assets/me.jpg"
           alt="About Me"
