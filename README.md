@@ -1,5 +1,4 @@
-https://my-portfolio-iclalkayacans-projects.vercel.app/
-
+https://my-portfolio-iclal-iclalkayacans-projects.vercel.app/
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
